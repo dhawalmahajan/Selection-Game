@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         startTimer()
-//        setupGridView()
+
 //        submitButton.isEnabled = false // Initially disabled
         collectionView.isHidden = true // Initially hidden
         // Do any additional setup after loading the view.
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
     
     func startTimer() {
-        vm.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeRandomCell), userInfo: nil, repeats: true)
+        vm.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(changeRandomCell), userInfo: nil, repeats: true)
         }
     
     @objc func didTapSubmit() {
@@ -67,7 +67,6 @@ class ViewController: UIViewController {
         collectionView.isHidden = false
         collectionView.reloadData()
     }
-  
     @objc func changeRandomCell() {
         guard !vm.allCellsGreen() else {
             vm.timer?.invalidate() // Stop timer if all cells are green
@@ -84,7 +83,7 @@ class ViewController: UIViewController {
         vm.currentRedIndex = newRedIndex
            collectionView.reloadData()
        }
-    
+
     func setupGridView() {
         vm.cells = Array(repeating: false, count: vm.grid)
         vm.currentRedIndex = Int.random(in: 0..<vm.cells.count)
@@ -111,7 +110,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let index = indexPath.row * vm.gridSize + indexPath.item
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.identifier, for: indexPath) as? ColorCell else { return UICollectionViewCell()}
-        cell.backgroundColor = vm.cells[vm.safeIndex(index: index)] ? .green : .red
+//        cell.backgroundColor = .gray
+        cell.backgroundColor = vm.cells[vm.safeIndex(index: index)] ? .green : .gray
         return cell
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bwC-NZ-67y">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -71,6 +71,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21" y="4"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="phz-XT-JlH">
+            <objects>
+                <viewController id="bwC-NZ-67y" customClass="GameViewController" customModule="Selection_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQW-xU-u8b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkC-iF-5xH">
+                                <rect key="frame" x="49" y="75" width="234" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-Qk-Jrb">
+                                <rect key="frame" x="299" y="75" width="78" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="bwC-NZ-67y" eventType="touchUpInside" id="MT9-Qa-URx"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dta-ar-pAP">
+                                <rect key="frame" x="0.0" y="125" width="393" height="693"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tMK-WP-h0q">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WlI-42-kJC">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ufX-qi-cZj">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H8A-gh-WTh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sAI-Qk-Jrb" firstAttribute="leading" secondItem="bkC-iF-5xH" secondAttribute="trailing" constant="16" id="5Js-Ab-doj"/>
+                            <constraint firstItem="H8A-gh-WTh" firstAttribute="bottom" secondItem="dta-ar-pAP" secondAttribute="bottom" id="CVf-4V-ob7"/>
+                            <constraint firstItem="dta-ar-pAP" firstAttribute="top" secondItem="bkC-iF-5xH" secondAttribute="bottom" constant="16" id="EPJ-og-U8i"/>
+                            <constraint firstItem="bkC-iF-5xH" firstAttribute="leading" secondItem="iQW-xU-u8b" secondAttribute="leading" constant="49" id="GSY-ae-wdg"/>
+                            <constraint firstItem="H8A-gh-WTh" firstAttribute="trailing" secondItem="dta-ar-pAP" secondAttribute="trailing" id="HaJ-0t-Ej1"/>
+                            <constraint firstAttribute="trailing" secondItem="sAI-Qk-Jrb" secondAttribute="trailing" constant="16" id="Woe-6X-rhM"/>
+                            <constraint firstItem="bkC-iF-5xH" firstAttribute="top" secondItem="H8A-gh-WTh" secondAttribute="top" constant="16" id="f2E-wE-nR4"/>
+                            <constraint firstItem="dta-ar-pAP" firstAttribute="leading" secondItem="H8A-gh-WTh" secondAttribute="leading" id="fsd-Jt-tEM"/>
+                            <constraint firstItem="sAI-Qk-Jrb" firstAttribute="top" secondItem="H8A-gh-WTh" secondAttribute="top" constant="16" id="vPN-yF-3HI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="dta-ar-pAP" id="Qgl-si-CYr"/>
+                        <outlet property="numberTextField" destination="bkC-iF-5xH" id="fTl-E0-Dna"/>
+                        <outlet property="submitButton" destination="sAI-Qk-Jrb" id="GyT-Y7-Br5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="014-eH-SCK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="-18"/>
         </scene>
     </scenes>
     <resources>

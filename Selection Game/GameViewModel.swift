@@ -18,7 +18,7 @@ class GameViewModel {
     func allCellsGreen() -> Bool {
            return !cells.contains(false)
        }
-    func changeRandomCell() {
+   @objc func changeRandomCell() {
            guard !allCellsGreen() else {
                timer?.invalidate() // Stop timer if all cells are green
                return

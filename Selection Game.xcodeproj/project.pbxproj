@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02EC4AD22BDE193500B230D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AD12BDE193500B230D9 /* AppDelegate.swift */; };
 		02EC4AD42BDE193500B230D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AD32BDE193500B230D9 /* SceneDelegate.swift */; };
-		02EC4AD62BDE193500B230D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AD52BDE193500B230D9 /* ViewController.swift */; };
 		02EC4AD92BDE193500B230D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 02EC4AD82BDE193500B230D9 /* Base */; };
 		02EC4ADB2BDE193600B230D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EC4ADA2BDE193600B230D9 /* Assets.xcassets */; };
 		02EC4ADE2BDE193600B230D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 02EC4ADD2BDE193600B230D9 /* Base */; };
@@ -23,7 +22,6 @@
 		02EC4ACE2BDE193500B230D9 /* Selection Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selection Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EC4AD12BDE193500B230D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02EC4AD32BDE193500B230D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02EC4AD52BDE193500B230D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02EC4AD82BDE193500B230D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02EC4ADA2BDE193600B230D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EC4ADD2BDE193600B230D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			children = (
 				02EC4AD12BDE193500B230D9 /* AppDelegate.swift */,
 				02EC4AD32BDE193500B230D9 /* SceneDelegate.swift */,
-				02EC4AD52BDE193500B230D9 /* ViewController.swift */,
 				02EC4AD72BDE193500B230D9 /* Main.storyboard */,
 				02EC4ADA2BDE193600B230D9 /* Assets.xcassets */,
 				02EC4ADC2BDE193600B230D9 /* LaunchScreen.storyboard */,
@@ -151,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02EC4AEC2BDE741700B230D9 /* GameViewController.swift in Sources */,
-				02EC4AD62BDE193500B230D9 /* ViewController.swift in Sources */,
 				02EC4AE62BDE1BA100B230D9 /* ColorCell.swift in Sources */,
 				02EC4AD22BDE193500B230D9 /* AppDelegate.swift in Sources */,
 				02EC4AE82BDE3CEC00B230D9 /* GameViewModel.swift in Sources */,

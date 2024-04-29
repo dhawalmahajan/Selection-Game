@@ -9,69 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Selection_Game" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shh-Od-VTu">
-                                <rect key="frame" x="49" y="75" width="234" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpW-4e-dsw">
-                                <rect key="frame" x="299" y="75" width="78" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zjq-8e-rF0">
-                                <rect key="frame" x="0.0" y="125" width="393" height="693"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YmU-1v-ggF">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j4z-am-HCG">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eFT-N8-etS">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MpW-4e-dsw" secondAttribute="trailing" constant="16" id="554-Kq-Hoe"/>
-                            <constraint firstItem="Zjq-8e-rF0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Jp-0W-ph9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zjq-8e-rF0" secondAttribute="trailing" id="AKq-GT-ezu"/>
-                            <constraint firstItem="MpW-4e-dsw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Uqg-OS-I1Z"/>
-                            <constraint firstItem="Shh-Od-VTu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="49" id="Yxp-pP-xcY"/>
-                            <constraint firstItem="Shh-Od-VTu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="akZ-fk-QAy"/>
-                            <constraint firstItem="MpW-4e-dsw" firstAttribute="leading" secondItem="Shh-Od-VTu" secondAttribute="trailing" constant="16" id="eL8-Gf-tw9"/>
-                            <constraint firstItem="Zjq-8e-rF0" firstAttribute="top" secondItem="Shh-Od-VTu" secondAttribute="bottom" constant="16" id="lPj-0u-nSb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zjq-8e-rF0" secondAttribute="bottom" id="z5J-KS-3gD"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="Zjq-8e-rF0" id="51Z-Bq-SZk"/>
-                        <outlet property="numberTextField" destination="Shh-Od-VTu" id="m63-bQ-nXK"/>
-                        <outlet property="submitButton" destination="MpW-4e-dsw" id="bti-3O-LNX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="4"/>
-        </scene>
         <!--Game View Controller-->
         <scene sceneID="phz-XT-JlH">
             <objects>

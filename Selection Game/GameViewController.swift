@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class GameViewController: UIViewController {
     
@@ -15,36 +16,34 @@ class GameViewController: UIViewController {
     var collectionData: [[UIColor]] = []
     var redCellIndexPath: IndexPath?
     var gameOver = false
-    
+    let vm = GameViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.identifier)
         
         // Do any additional setup after loading the view.
     }
     
-    func generateRandomRedCell() {
+   
+    
+    func generateRandomRedCell() -> IndexPath {
         var randomIndexPath: IndexPath
         repeat {
             let randomRow = Int.random(in: 0..<collectionData.count)
             let randomCol = Int.random(in: 0..<collectionData[0].count)
             randomIndexPath = IndexPath(row: randomCol, section: randomRow)
-//            redCellIndexPath = IndexPath(row: randomCol, section: randomRow)
-        } while collectionData[randomIndexPath.section][randomIndexPath.row] == .green
+            print("Function: \(#function), line: \(#line)",randomIndexPath)
+        }while  collectionData[randomIndexPath.section][randomIndexPath.row] == .green
+       
         
-        collectionData[randomIndexPath.section][randomIndexPath.row] = .red
         redCellIndexPath = randomIndexPath
-//        if let index = redCellIndexPath {
-//            collectionView.reloadItems(at: [randomIndexPath])
-//        }
+        collectionData[randomIndexPath.section][randomIndexPath.row] = .red
+        return randomIndexPath
     }
     
-    func isSquareNumber(_ number: Int) -> Bool {
-        let sqrtNumber = Int(sqrt(Double(number)))
-        return sqrtNumber * sqrtNumber == number
-    }
+   
     
     func checkGameStatus() {
         if collectionData.allSatisfy({ $0.allSatisfy({ $0 == .green }) }) {
@@ -64,7 +63,7 @@ class GameViewController: UIViewController {
             return
         }
         
-        if !isSquareNumber(number) {
+        if !vm.isSquareNumber(number) {
             showAlert(message: "Please enter a valid perfect square number.")
             return
         }
@@ -74,7 +73,7 @@ class GameViewController: UIViewController {
         
         redCellIndexPath = nil
         gameOver = false
-        generateRandomRedCell()
+        let _ = generateRandomRedCell()
         updateCollectionView()
     }
     func showAlert(message: String) {
@@ -109,10 +108,11 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             collectionView.reloadItems(at: [indexPath])
             checkGameStatus()
             if !gameOver {
-                generateRandomRedCell()
-                updateCollectionView()
+                let index = generateRandomRedCell()
+                collectionView.reloadItems(at: [index])
             }
         }
-        return
+        
+        
     }
 }

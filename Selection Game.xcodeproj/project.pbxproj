@@ -13,8 +13,6 @@
 		02EC4ADB2BDE193600B230D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EC4ADA2BDE193600B230D9 /* Assets.xcassets */; };
 		02EC4ADE2BDE193600B230D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 02EC4ADD2BDE193600B230D9 /* Base */; };
 		02EC4AE62BDE1BA100B230D9 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AE52BDE1BA100B230D9 /* ColorCell.swift */; };
-		02EC4AE82BDE3CEC00B230D9 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AE72BDE3CEC00B230D9 /* GameViewModel.swift */; };
-		02EC4AEA2BDE4A6700B230D9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AE92BDE4A6700B230D9 /* GameView.swift */; };
 		02EC4AEC2BDE741700B230D9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EC4AEB2BDE741700B230D9 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +25,6 @@
 		02EC4ADD2BDE193600B230D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02EC4ADF2BDE193600B230D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02EC4AE52BDE1BA100B230D9 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
-		02EC4AE72BDE3CEC00B230D9 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		02EC4AE92BDE4A6700B230D9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		02EC4AEB2BDE741700B230D9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,8 +65,6 @@
 				02EC4ADC2BDE193600B230D9 /* LaunchScreen.storyboard */,
 				02EC4ADF2BDE193600B230D9 /* Info.plist */,
 				02EC4AE52BDE1BA100B230D9 /* ColorCell.swift */,
-				02EC4AE72BDE3CEC00B230D9 /* GameViewModel.swift */,
-				02EC4AE92BDE4A6700B230D9 /* GameView.swift */,
 				02EC4AEB2BDE741700B230D9 /* GameViewController.swift */,
 			);
 			path = "Selection Game";
@@ -150,8 +144,6 @@
 				02EC4AEC2BDE741700B230D9 /* GameViewController.swift in Sources */,
 				02EC4AE62BDE1BA100B230D9 /* ColorCell.swift in Sources */,
 				02EC4AD22BDE193500B230D9 /* AppDelegate.swift in Sources */,
-				02EC4AE82BDE3CEC00B230D9 /* GameViewModel.swift in Sources */,
-				02EC4AEA2BDE4A6700B230D9 /* GameView.swift in Sources */,
 				02EC4AD42BDE193500B230D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

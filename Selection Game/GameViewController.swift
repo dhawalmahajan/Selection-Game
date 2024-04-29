@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     var collectionData: [[UIColor]] = []
     var redCellIndexPath: IndexPath?
     var gameOver = false
-    let vm = GameViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -26,7 +26,10 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-   
+    func isSquareNumber(_ number: Int) -> Bool {
+        let sqrtNumber = Int(sqrt(Double(number)))
+        return sqrtNumber * sqrtNumber == number
+    }
     
     func generateRandomRedCell() -> IndexPath {
         var randomIndexPath: IndexPath
@@ -35,7 +38,7 @@ class GameViewController: UIViewController {
             let randomCol = Int.random(in: 0..<collectionData[0].count)
             randomIndexPath = IndexPath(row: randomCol, section: randomRow)
             print("Function: \(#function), line: \(#line)",randomIndexPath)
-        }while  collectionData[randomIndexPath.section][randomIndexPath.row] == .green
+        }while /*randomIndexPath == redCellIndexPath*/  collectionData[randomIndexPath.section][randomIndexPath.row] == .green
        
         
         redCellIndexPath = randomIndexPath
@@ -63,7 +66,7 @@ class GameViewController: UIViewController {
             return
         }
         
-        if !vm.isSquareNumber(number) {
+        if !isSquareNumber(number) {
             showAlert(message: "Please enter a valid perfect square number.")
             return
         }
@@ -97,6 +100,9 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.identifier, for: indexPath) as? ColorCell else { return UICollectionViewCell()}
         cell.backgroundColor = collectionData[indexPath.section][indexPath.row]
+//        if indexPath == redCellIndexPath {
+//            cell.backgroundColor = .red
+//        }
         return cell
     }
     

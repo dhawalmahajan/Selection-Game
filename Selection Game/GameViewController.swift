@@ -26,13 +26,19 @@ class GameViewController: UIViewController {
     }
     
     func generateRandomRedCell() {
-        let randomRow = Int.random(in: 0..<collectionData.count)
-        let randomCol = Int.random(in: 0..<collectionData[0].count)
-        redCellIndexPath = IndexPath(row: randomRow, section: randomCol)
-        collectionData[randomRow][randomCol] = .red
-        if let indexPath = redCellIndexPath {
-//            collectionView.reloadItems(at: [indexPath])
-        }
+        var randomIndexPath: IndexPath
+        repeat {
+            let randomRow = Int.random(in: 0..<collectionData.count)
+            let randomCol = Int.random(in: 0..<collectionData[0].count)
+            randomIndexPath = IndexPath(row: randomCol, section: randomRow)
+//            redCellIndexPath = IndexPath(row: randomCol, section: randomRow)
+        } while collectionData[randomIndexPath.section][randomIndexPath.row] == .green
+        
+        collectionData[randomIndexPath.section][randomIndexPath.row] = .red
+        redCellIndexPath = randomIndexPath
+//        if let index = redCellIndexPath {
+//            collectionView.reloadItems(at: [randomIndexPath])
+//        }
     }
     
     func isSquareNumber(_ number: Int) -> Bool {
@@ -48,6 +54,10 @@ class GameViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
+    
+    func updateCollectionView() {
+        collectionView.reloadData()
+    }
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         guard let inputText = numberTextField.text, let number = Int(inputText), !inputText.isEmpty else {
             showAlert(message: "Please enter a valid perfect square number.")
@@ -59,14 +69,13 @@ class GameViewController: UIViewController {
             return
         }
         
-        //        collectionData = Array(repeating: Array(repeating: UIColor.gray, count: number), count: number)
         let gridSize = Int(sqrt(Double(number)))
         collectionData = Array(repeating: Array(repeating: UIColor.gray, count: gridSize), count: gridSize)
         
         redCellIndexPath = nil
         gameOver = false
         generateRandomRedCell()
-        collectionView.reloadData()
+        updateCollectionView()
     }
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
@@ -98,9 +107,12 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath == redCellIndexPath {
             collectionData[indexPath.section][indexPath.row] = .green
             collectionView.reloadItems(at: [indexPath])
-            generateRandomRedCell()
-            collectionView.reloadData()
             checkGameStatus()
+            if !gameOver {
+                generateRandomRedCell()
+                updateCollectionView()
+            }
         }
+        return
     }
 }
